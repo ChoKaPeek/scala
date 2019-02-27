@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/ChoKaPic/Documents/repos/scala/company/src/main/scala/parse-json.scala:4:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mval fileContents = Source.fromFile("example.json").getLines.mkString[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ChoKaPic/Documents/repos/scala/company/src/main/scala/parse-json.scala:5:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mJson.parse(fileContents)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
