@@ -5,12 +5,12 @@ import scala.io.Source
 import java.io.File
 
 class Parser(dir: String) {
-    def parseJson(file: String): Unit = {
+    def parseJson(file: File): Unit = {
         val fileContents = Source.fromFile(file).getLines.mkString
         val parsed = Json.parse(fileContents)
         println(parsed)
     }
-    def parseCSV(file: String): Unit = {
+    def parseCSV(file: File): Unit = {
         println("Index, Girth, Height, Volume")
         val bufferedSource = Source.fromFile("example.csv")
         for (line <- bufferedSource.getLines) {
@@ -23,8 +23,10 @@ class Parser(dir: String) {
     def parse() = {
       println("CSV FILES:")
       println(getListOfFiles(dir, List(".csv")))
+      getListOfFiles(dir, List(".csv")).map(parseCSV(_))
       println("JSON FILES:")
       println(getListOfFiles(dir, List(".json")))
+      getListOfFiles(dir, List(".json")).map(parseJson(_))
     }
 
     def getListOfFiles(path: String, extensions: List[String]): List[File] = {
