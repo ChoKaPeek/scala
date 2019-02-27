@@ -1,8 +1,6 @@
 import play.api.libs.json._
-import play.api.libs.json._
- 
-val rawJson = """{"hello": "world", "age": 42}"""
-rawJson: String = {"hello": "world", "age": 42}
- 
+import scala.io.Source
+
+val fileContents = Source.fromFile(filename).getLines.mkString
 Json.parse(rawJson)
-res0: play.api.libs.json.JsValue = {"hello":"world","age":42}
+//res0: play.api.libs.json.JsValue = RESULT_HERE
