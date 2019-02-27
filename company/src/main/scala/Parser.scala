@@ -21,7 +21,15 @@ class Parser(dir: String) {
     }
 
     def parse() = {
-      println(listAllFiles(dir))
+      println("CSV FILES:")
+      println(getListOfFiles(dir, List(".csv")))
+      println("JSON FILES:")
+      println(getListOfFiles(dir, List(".json")))
+    }
+
+    def getListOfFiles(path: String, extensions: List[String]): List[File] = {
+      val dir = new File(path)
+      dir.listFiles.filter(_.isFile).toList.filter{file => extensions.exists(file.getName.endsWith(_))}
     }
 
     def listAllFiles(path: String): List[File] = {
