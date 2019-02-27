@@ -1,3 +1,6 @@
+# Company
+
+## Problematic
 Bonjour
 
 Voici votre projet pour la partie scala :
@@ -35,3 +38,10 @@ I) Mandatory (15 points)
 
 --
 Adrien Broussolle
+
+## How to run
+You need sbt, and a Java jdk
+go to the project folder
+run `sbt`
+the interactive shell is now launched, you can `~run` to run the project
+
