@@ -1,10 +1,9 @@
 object CSVDemo extends App {
-    println("Month, Income, Expenses, Profit")
-    val bufferedSource = io.Source.fromFile("/tmp/finance.csv")
+    println("Index, Girth, Height, Volume")
+    val bufferedSource = io.Source.fromFile("example.csv")
     for (line <- bufferedSource.getLines) {
         val cols = line.split(",").map(_.trim)
-        // do whatever you want with the columns here
-        println(s"${cols(0)}|${cols(1)}|${cols(2)}|${cols(3)}")
+        println(s"${cols(0)} | ${cols(1)} | ${cols(2)} | ${cols(3)}")
     }
     bufferedSource.close
 }
