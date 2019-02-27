@@ -24,7 +24,9 @@ version := "1.0"
 // Want to use a published library in your project?
 // You can define other libraries as dependencies in your build like this:
 libraryDependencies ++= Seq("com.typesafe.play" %% "play" % "2.7.0",
-                            "org.typelevel" %% "cats-core" % "1.4.0")
+                            "com.typesafe.play" %% "play-ws" % "2.7.0",
+                            "org.typelevel" %% "cats-core" % "1.4.0",
+                            "org.apache.spark" %% "spark-core" % "2.4.0")
 
 // Here, `libraryDependencies` is a set of dependencies, and by using `+=`,
 // we're adding the cats dependency to the set of dependencies that sbt will go
