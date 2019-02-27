@@ -20,6 +20,10 @@ class Parser(dir: String) {
         bufferedSource.close
     }
 
+    def parse() = {
+      println(listAllFiles(dir))
+    }
+
     def listAllFiles(path: String): List[File] = {
         val directory = new File(path)
         if (directory.exists && directory.isDirectory) {
