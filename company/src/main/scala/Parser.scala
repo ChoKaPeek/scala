@@ -12,7 +12,7 @@ class Parser(dir: String) {
     }
     def parseCSV(file: File): Unit = {
         println("Index, Girth, Height, Volume")
-        val bufferedSource = Source.fromFile("example.csv")
+        val bufferedSource = Source.fromFile(file)
         for (line <- bufferedSource.getLines) {
             val cols = line.split(",").map(_.trim)
             println(s"${cols(0)} | ${cols(1)} | ${cols(2)} | ${cols(3)}")
