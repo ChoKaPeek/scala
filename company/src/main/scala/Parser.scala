@@ -30,8 +30,8 @@ class Parser(dir: String) {
     }
 
     def getListOfFiles(path: String, extensions: List[String]): List[File] = {
-      val dir = new File(path)
-      dir.listFiles.filter(_.isFile).toList.filter{file => extensions.exists(file.getName.endsWith(_))}
+      val files = listFilesR(path)
+      files.filter{file => extensions.exists(file.getName.endsWith(_))}
     }
 
     def listAllFiles(path: String): List[File] = {
@@ -48,9 +48,20 @@ class Parser(dir: String) {
         listAllFiles(path).filter(_.isDirectory)
     }
 
-    def listFiles(path: String): List[String] = {
+    def listFiles(path: String): List[File] = {
         listAllFiles(path).filter{
           f => f.isFile && (f.getName.endsWith(".csv")
-            || f.getName.endsWith(".json")) }.map(_.getAbsolutePath)
+            || f.getName.endsWith(".json")) }
+    }
+
+    def listFilesR_aux(directories: List[File], files: List[File]) : List[File] = {
+        directories match {
+            case Nil => files
+            case d::tail => listFilesR_aux(tail, files:::listFiles(d.getPath()))
+        }
+    }
+
+    def listFilesR(path: String) : List[File] = {
+        listFilesR_aux(listDirectories(path), listFiles(path))
     }
 }
