@@ -27,6 +27,10 @@ libraryDependencies ++= Seq("com.typesafe.play" %% "play" % "2.7.0",
                             "com.typesafe.play" %% "play-ws" % "2.7.0",
                             "org.typelevel" %% "cats-core" % "1.4.0",
                             "org.apache.spark" %% "spark-core" % "2.4.0")
+// Enable Play
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
+libraryDependencies += guice
+
 
 // Here, `libraryDependencies` is a set of dependencies, and by using `+=`,
 // we're adding the cats dependency to the set of dependencies that sbt will go
