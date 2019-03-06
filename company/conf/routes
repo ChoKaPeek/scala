@@ -3,3 +3,8 @@
 # ~~~~
 
 GET / controllers.IndexController.index()
+GET /index controllers.IndexController.index()
+
+GET /hello controllers.IndexController.hello()
+
+POST /msg controllers.MsgController.msg()
