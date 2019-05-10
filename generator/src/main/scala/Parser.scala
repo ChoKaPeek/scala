@@ -1,33 +1,42 @@
 import play.api.libs.json._
 import scala.io.Source
 import java.io.File
+import org.joda.time.DateTime;
 
 class Parser(dir: String) {
-
-    case class Drone(name: String, url: String)
+    
+    case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double, longitude: Double, datetime: DateTime, temperature: Int)
 
     implicit object DroneReads extends Reads[Drone] {
         def reads(json: JsValue) = JsSuccess(Drone(  // Has to be a JsResult, should be a case with the possibility of a JsFailure
-            (json \ "name").as[String],
-            (json \ "url").as[String]
+            (json \ "id").as[Int],
+            (json \ "speed").as[Float],
+            (json \ "altitude").as[Float],
+            (json \ "latitude").as[Double],
+            (json \ "longitude").as[Double],
+            (json \ "datetime").as[DateTime],
+            (json \ "temperature").as[Int]
         ))
     }
 
     def parseJson(file: File): Unit = {
-        val fileContents = Source.fromFile(file).getLines.map
-            { line => (Json.parse(line.mkString)) }
+        val fileContents = Source.fromFile(file).getLines().map {
+            line => (Json.parse(line.mkString))
+        }
 
         println(fileContents)
     }
 
     def parseCSV(file: File): Unit = {
-        println("Index, Girth, Height, Volume")
-        val bufferedSource = Source.fromFile(file)
-        for (line <- bufferedSource.getLines) {
-            val cols = line.split(",").map(_.trim)
-            println(s"${cols(0)} | ${cols(1)} | ${cols(2)} | ${cols(3)}")
+        val fileContents = Source.fromFile(file).getLines().drop(1).toVector.map {
+            line => line.split(",").toVector.map(_.trim) match {
+                case Vector(id, speed, altitude, latitude, longitude, datetime, temperature) => Drone(id, speed, altitude, latitude, longitude, datetime, temperature)
+                case _ => println(s"WARNING UNKNOWN DATA FORMAT FOR LINE: $line")
+                          None
+            }
         }
-        bufferedSource.close
+     
+        println(fileContents)
     }
 
     def parse() = {
