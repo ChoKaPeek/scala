@@ -7,4 +7,4 @@ GET /index controllers.IndexController.index()
 
 GET /hello controllers.IndexController.hello()
 
-POST /msg controllers.MsgController.msg()
+POST /msg controllers.IndexController.msg()
