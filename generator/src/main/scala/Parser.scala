@@ -4,7 +4,10 @@ import java.io.File
 
 class Parser(dir: String) {
     
-    case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double, longitude: Double, datetime: String, temperature: Int)
+  case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double,
+                   longitude: Double, datetime: String, temperature: Float,
+                   battery: Float)
+
 
     implicit object DroneReads extends Reads[Drone] {
         def reads(json: JsValue) = JsSuccess(Drone(  // Has to be a JsResult, should be a case with the possibility of a JsFailure
@@ -14,7 +17,8 @@ class Parser(dir: String) {
             (json \ "latitude").as[Double],
             (json \ "longitude").as[Double],
             (json \ "datetime").as[String],
-            (json \ "temperature").as[Int]
+            (json \ "temperature").as[Float]
+            (json \ "battery").as[Float]
         ))
     }
 
