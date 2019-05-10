@@ -2,11 +2,16 @@ package controllers
 
 import javax.inject._
 import play.api.mvc._
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
+
+case class Drone(id: Int, name: String, country: String)
 
 class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
+    var fixme: List[Drone] = List();
     def index() = Action {
-      Ok("Hello, World!")
+      Ok(fixme.toString())
     }
 
     def hello() = Action {
@@ -23,5 +28,14 @@ class IndexController @Inject()(val controllerComponents: ControllerComponents)
           )
         )
       Ok(views.html.hello("Welcome to DroneTech", user, posts))
+    }
+
+    def msg() = Action {request =>
+        implicit val droneReads = Json.reads[Drone]
+        val json = request.body.asJson.get
+        val drone = json.as[Drone]
+        fixme = drone :: fixme;
+        println(drone)
+        Ok
     }
 }
