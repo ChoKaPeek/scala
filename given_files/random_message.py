@@ -1,6 +1,9 @@
 import argparse
 import random
 import string
+import collections
+import datetime
+import time
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -15,12 +18,20 @@ def random_string(string_length=10):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(string_length))
 
+def random_float(order, max_dec):
+    return round(random.random() * order, max_dec)
+
 def generate_content(idx):
-    name = random_string(15)
-    country = random_string(20)
-    return '{' + '"id": {}, "name": "{}", "country": "{}"'.format(idx,
-                                                                  name,
-                                                                  country) + '}'
+    ordered = collections.OrderedDict({
+        "id": idx,
+        "speed": random_float(10, 1), 
+        "altitude": random_float(20, 2),
+        "latitude": random_float(100, 6),
+        "longitude": random_float(100, 6),
+        "datetime": '"{}"'.format(datetime.datetime.fromtimestamp(time.time())),
+        "temperature": random_float(10, 1)
+        })
+    return '{' +  "".join('"{}": {},'.format(key, val) for key, val in ordered.items())[:-1] + '}'
 
 def generate_json_drone_msg(count, output_file):
     with open(output_file, "w") as out_fo:
