@@ -5,7 +5,9 @@ import play.api.mvc._
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
-case class Drone(id: Int, name: String, country: String)
+case class Drone(id: Int, speed: Float, altitude: Float, latitude: Float,
+                 longitude: Float, datetime: String, temperature: Float,
+                 battery: Float)
 
 class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
