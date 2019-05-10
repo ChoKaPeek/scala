@@ -17,7 +17,7 @@ class Parser(dir: String) {
             (json \ "latitude").as[Double],
             (json \ "longitude").as[Double],
             (json \ "datetime").as[String],
-            (json \ "temperature").as[Float]
+            (json \ "temperature").as[Float],
             (json \ "battery").as[Float]
         ))
     }
@@ -31,14 +31,15 @@ class Parser(dir: String) {
     }
 
     def parseCSV(file: File): Unit = {
-        val fileContents = Source.fromFile(file).getLines().drop(1).toVector.map {
+        val bufferedSource = Source.fromFile(file)
+        val fileContents = bufferedSource.getLines().drop(1).toVector.map {
             line => line.split(",").toVector.map(_.trim) match {
-                case Vector(id, speed, altitude, latitude, longitude, datetime, temperature) => Drone(id.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toInt)
+                case Vector(id, speed, altitude, latitude, longitude, datetime, temperature, battery) => Drone(id.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toInt, battery.toInt)
                 case _ => println(s"WARNING UNKNOWN DATA FORMAT FOR LINE: $line")
                           None
             }
         }
-     
+        bufferedSource.close()
         println(fileContents)
     }
 
