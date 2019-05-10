@@ -29,9 +29,10 @@ def generate_content(idx):
         "latitude": random_float(100, 6),
         "longitude": random_float(100, 6),
         "datetime": '"{}"'.format(datetime.datetime.fromtimestamp(time.time())),
-        "temperature": random_float(10, 1)
+        "temperature": random_float(10, 1),
+        "battery": random_float(100, 1),
         })
-    return '{' +  "".join('"{}": {},'.format(key, val) for key, val in ordered.items())[:-1] + '}'
+    return '{' +  "".join('"{}":{},'.format(key, val) for key, val in ordered.items())[:-1] + '}'
 
 def generate_json_drone_msg(count, output_file):
     with open(output_file, "w") as out_fo:
