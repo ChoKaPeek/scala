@@ -1,11 +1,10 @@
 import play.api.libs.json._
 import scala.io.Source
 import java.io.File
-import org.joda.time.DateTime;
 
 class Parser(dir: String) {
     
-    case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double, longitude: Double, datetime: DateTime, temperature: Int)
+    case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double, longitude: Double, datetime: String, temperature: Int)
 
     implicit object DroneReads extends Reads[Drone] {
         def reads(json: JsValue) = JsSuccess(Drone(  // Has to be a JsResult, should be a case with the possibility of a JsFailure
@@ -14,13 +13,13 @@ class Parser(dir: String) {
             (json \ "altitude").as[Float],
             (json \ "latitude").as[Double],
             (json \ "longitude").as[Double],
-            (json \ "datetime").as[DateTime],
+            (json \ "datetime").as[String],
             (json \ "temperature").as[Int]
         ))
     }
 
     def parseJson(file: File): Unit = {
-        val fileContents = Source.fromFile(file).getLines().map {
+        val fileContents = Source.fromFile(file).getLines().toVector.map {
             line => (Json.parse(line.mkString))
         }
 
@@ -30,7 +29,7 @@ class Parser(dir: String) {
     def parseCSV(file: File): Unit = {
         val fileContents = Source.fromFile(file).getLines().drop(1).toVector.map {
             line => line.split(",").toVector.map(_.trim) match {
-                case Vector(id, speed, altitude, latitude, longitude, datetime, temperature) => Drone(id, speed, altitude, latitude, longitude, datetime, temperature)
+                case Vector(id, speed, altitude, latitude, longitude, datetime, temperature) => Drone(id.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toInt)
                 case _ => println(s"WARNING UNKNOWN DATA FORMAT FOR LINE: $line")
                           None
             }
