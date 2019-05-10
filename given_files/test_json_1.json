@@ -1,100 +1,100 @@
-{"id": 1,"speed": 8.4,"altitude": 11.26,"latitude": 45.870854,"longitude": 69.199037,"datetime": "2019-05-10 21:12:44.919625","temperature": 2.3}
-{"id": 2,"speed": 3.4,"altitude": 1.35,"latitude": 38.3413,"longitude": 97.760819,"datetime": "2019-05-10 21:12:44.919660","temperature": 9.1}
-{"id": 3,"speed": 8.8,"altitude": 13.76,"latitude": 49.689304,"longitude": 84.910073,"datetime": "2019-05-10 21:12:44.919677","temperature": 0.6}
-{"id": 4,"speed": 2.0,"altitude": 15.5,"latitude": 95.575583,"longitude": 50.941258,"datetime": "2019-05-10 21:12:44.919693","temperature": 1.8}
-{"id": 5,"speed": 8.3,"altitude": 19.1,"latitude": 45.611205,"longitude": 1.51719,"datetime": "2019-05-10 21:12:44.919707","temperature": 7.0}
-{"id": 6,"speed": 7.5,"altitude": 1.4,"latitude": 28.789319,"longitude": 58.102656,"datetime": "2019-05-10 21:12:44.919720","temperature": 2.0}
-{"id": 7,"speed": 3.5,"altitude": 8.11,"latitude": 92.584488,"longitude": 30.74839,"datetime": "2019-05-10 21:12:44.919734","temperature": 9.5}
-{"id": 8,"speed": 4.5,"altitude": 18.47,"latitude": 6.303436,"longitude": 95.273754,"datetime": "2019-05-10 21:12:44.919747","temperature": 5.3}
-{"id": 9,"speed": 3.0,"altitude": 5.53,"latitude": 59.270498,"longitude": 87.526739,"datetime": "2019-05-10 21:12:44.919760","temperature": 3.4}
-{"id": 10,"speed": 3.2,"altitude": 3.95,"latitude": 85.240747,"longitude": 9.287449,"datetime": "2019-05-10 21:12:44.919773","temperature": 3.1}
-{"id": 11,"speed": 1.5,"altitude": 14.86,"latitude": 81.779069,"longitude": 49.882978,"datetime": "2019-05-10 21:12:44.919786","temperature": 2.6}
-{"id": 12,"speed": 1.9,"altitude": 19.85,"latitude": 4.181406,"longitude": 99.975238,"datetime": "2019-05-10 21:12:44.919799","temperature": 5.9}
-{"id": 13,"speed": 5.3,"altitude": 5.97,"latitude": 56.576264,"longitude": 59.168946,"datetime": "2019-05-10 21:12:44.919811","temperature": 5.4}
-{"id": 14,"speed": 7.0,"altitude": 15.03,"latitude": 68.431877,"longitude": 39.649126,"datetime": "2019-05-10 21:12:44.919824","temperature": 8.4}
-{"id": 15,"speed": 10.0,"altitude": 12.24,"latitude": 85.167493,"longitude": 71.052247,"datetime": "2019-05-10 21:12:44.919837","temperature": 3.0}
-{"id": 16,"speed": 0.1,"altitude": 14.31,"latitude": 91.015148,"longitude": 12.723395,"datetime": "2019-05-10 21:12:44.919850","temperature": 1.9}
-{"id": 17,"speed": 1.0,"altitude": 2.01,"latitude": 59.658151,"longitude": 33.992977,"datetime": "2019-05-10 21:12:44.919863","temperature": 1.3}
-{"id": 18,"speed": 5.0,"altitude": 12.31,"latitude": 39.480987,"longitude": 76.131864,"datetime": "2019-05-10 21:12:44.919876","temperature": 5.9}
-{"id": 19,"speed": 0.3,"altitude": 11.58,"latitude": 16.532322,"longitude": 87.742132,"datetime": "2019-05-10 21:12:44.919889","temperature": 6.5}
-{"id": 20,"speed": 2.7,"altitude": 17.34,"latitude": 46.864609,"longitude": 45.231675,"datetime": "2019-05-10 21:12:44.919902","temperature": 5.6}
-{"id": 21,"speed": 7.8,"altitude": 11.8,"latitude": 71.305158,"longitude": 52.05463,"datetime": "2019-05-10 21:12:44.919914","temperature": 6.8}
-{"id": 22,"speed": 6.7,"altitude": 3.52,"latitude": 24.185237,"longitude": 67.231781,"datetime": "2019-05-10 21:12:44.919927","temperature": 6.3}
-{"id": 23,"speed": 8.4,"altitude": 17.0,"latitude": 95.306734,"longitude": 74.236836,"datetime": "2019-05-10 21:12:44.919943","temperature": 1.7}
-{"id": 24,"speed": 4.3,"altitude": 9.84,"latitude": 29.597899,"longitude": 53.312698,"datetime": "2019-05-10 21:12:44.919955","temperature": 5.1}
-{"id": 25,"speed": 6.1,"altitude": 3.17,"latitude": 51.752347,"longitude": 82.147807,"datetime": "2019-05-10 21:12:44.919968","temperature": 8.3}
-{"id": 26,"speed": 6.3,"altitude": 17.21,"latitude": 40.953104,"longitude": 35.303308,"datetime": "2019-05-10 21:12:44.919981","temperature": 5.1}
-{"id": 27,"speed": 4.8,"altitude": 9.66,"latitude": 36.576529,"longitude": 55.714775,"datetime": "2019-05-10 21:12:44.919994","temperature": 7.9}
-{"id": 28,"speed": 9.0,"altitude": 17.94,"latitude": 47.230453,"longitude": 8.858618,"datetime": "2019-05-10 21:12:44.920006","temperature": 7.6}
-{"id": 29,"speed": 3.3,"altitude": 8.02,"latitude": 25.249952,"longitude": 30.899636,"datetime": "2019-05-10 21:12:44.920018","temperature": 5.2}
-{"id": 30,"speed": 7.1,"altitude": 17.97,"latitude": 1.753238,"longitude": 62.540056,"datetime": "2019-05-10 21:12:44.920031","temperature": 0.4}
-{"id": 31,"speed": 1.7,"altitude": 7.75,"latitude": 81.8678,"longitude": 38.607656,"datetime": "2019-05-10 21:12:44.920044","temperature": 6.7}
-{"id": 32,"speed": 0.3,"altitude": 0.04,"latitude": 76.306238,"longitude": 94.389098,"datetime": "2019-05-10 21:12:44.920057","temperature": 1.8}
-{"id": 33,"speed": 8.6,"altitude": 16.03,"latitude": 32.291632,"longitude": 3.752379,"datetime": "2019-05-10 21:12:44.920070","temperature": 0.5}
-{"id": 34,"speed": 4.4,"altitude": 5.41,"latitude": 49.441593,"longitude": 14.648041,"datetime": "2019-05-10 21:12:44.920124","temperature": 6.1}
-{"id": 35,"speed": 3.8,"altitude": 11.67,"latitude": 40.562002,"longitude": 81.61159,"datetime": "2019-05-10 21:12:44.920140","temperature": 5.1}
-{"id": 36,"speed": 9.1,"altitude": 1.33,"latitude": 18.427449,"longitude": 82.861376,"datetime": "2019-05-10 21:12:44.920152","temperature": 6.1}
-{"id": 37,"speed": 6.2,"altitude": 13.28,"latitude": 94.366709,"longitude": 39.365599,"datetime": "2019-05-10 21:12:44.920165","temperature": 7.3}
-{"id": 38,"speed": 1.3,"altitude": 13.8,"latitude": 70.653307,"longitude": 46.809247,"datetime": "2019-05-10 21:12:44.920178","temperature": 5.2}
-{"id": 39,"speed": 0.8,"altitude": 8.9,"latitude": 50.159208,"longitude": 47.114647,"datetime": "2019-05-10 21:12:44.920190","temperature": 3.2}
-{"id": 40,"speed": 5.2,"altitude": 15.62,"latitude": 43.484177,"longitude": 48.820327,"datetime": "2019-05-10 21:12:44.920203","temperature": 6.9}
-{"id": 41,"speed": 1.6,"altitude": 0.86,"latitude": 61.746641,"longitude": 45.543848,"datetime": "2019-05-10 21:12:44.920215","temperature": 1.3}
-{"id": 42,"speed": 8.4,"altitude": 13.81,"latitude": 60.12667,"longitude": 43.753864,"datetime": "2019-05-10 21:12:44.920228","temperature": 8.4}
-{"id": 43,"speed": 1.6,"altitude": 13.41,"latitude": 57.714241,"longitude": 12.312355,"datetime": "2019-05-10 21:12:44.920240","temperature": 9.7}
-{"id": 44,"speed": 10.0,"altitude": 2.17,"latitude": 45.222186,"longitude": 6.695891,"datetime": "2019-05-10 21:12:44.920253","temperature": 9.3}
-{"id": 45,"speed": 9.2,"altitude": 2.13,"latitude": 95.570637,"longitude": 25.535453,"datetime": "2019-05-10 21:12:44.920268","temperature": 3.3}
-{"id": 46,"speed": 4.7,"altitude": 4.4,"latitude": 78.031857,"longitude": 30.665701,"datetime": "2019-05-10 21:12:44.920281","temperature": 5.2}
-{"id": 47,"speed": 5.0,"altitude": 14.9,"latitude": 26.49177,"longitude": 70.899382,"datetime": "2019-05-10 21:12:44.920294","temperature": 1.0}
-{"id": 48,"speed": 0.7,"altitude": 5.55,"latitude": 88.947945,"longitude": 75.088651,"datetime": "2019-05-10 21:12:44.920306","temperature": 3.4}
-{"id": 49,"speed": 5.5,"altitude": 4.33,"latitude": 54.249923,"longitude": 73.867639,"datetime": "2019-05-10 21:12:44.920320","temperature": 6.7}
-{"id": 50,"speed": 5.9,"altitude": 12.33,"latitude": 64.310114,"longitude": 79.762647,"datetime": "2019-05-10 21:12:44.920332","temperature": 7.3}
-{"id": 51,"speed": 0.4,"altitude": 5.55,"latitude": 36.654643,"longitude": 32.861498,"datetime": "2019-05-10 21:12:44.920345","temperature": 8.8}
-{"id": 52,"speed": 7.6,"altitude": 0.14,"latitude": 98.98045,"longitude": 42.66582,"datetime": "2019-05-10 21:12:44.920357","temperature": 5.8}
-{"id": 53,"speed": 0.7,"altitude": 8.7,"latitude": 55.432475,"longitude": 44.647538,"datetime": "2019-05-10 21:12:44.920370","temperature": 5.7}
-{"id": 54,"speed": 4.4,"altitude": 12.2,"latitude": 72.68168,"longitude": 26.659093,"datetime": "2019-05-10 21:12:44.920383","temperature": 8.8}
-{"id": 55,"speed": 8.2,"altitude": 11.35,"latitude": 26.561623,"longitude": 37.754012,"datetime": "2019-05-10 21:12:44.920395","temperature": 5.5}
-{"id": 56,"speed": 9.5,"altitude": 2.36,"latitude": 50.28677,"longitude": 75.554102,"datetime": "2019-05-10 21:12:44.920408","temperature": 1.6}
-{"id": 57,"speed": 7.2,"altitude": 0.1,"latitude": 27.147302,"longitude": 3.591477,"datetime": "2019-05-10 21:12:44.920420","temperature": 2.4}
-{"id": 58,"speed": 2.0,"altitude": 15.58,"latitude": 2.903289,"longitude": 79.452548,"datetime": "2019-05-10 21:12:44.920460","temperature": 6.8}
-{"id": 59,"speed": 2.2,"altitude": 6.68,"latitude": 52.893954,"longitude": 17.309326,"datetime": "2019-05-10 21:12:44.920476","temperature": 0.8}
-{"id": 60,"speed": 9.6,"altitude": 15.12,"latitude": 7.098741,"longitude": 19.953219,"datetime": "2019-05-10 21:12:44.920489","temperature": 3.4}
-{"id": 61,"speed": 4.6,"altitude": 3.44,"latitude": 77.24743,"longitude": 21.550788,"datetime": "2019-05-10 21:12:44.920501","temperature": 0.6}
-{"id": 62,"speed": 1.1,"altitude": 11.42,"latitude": 22.915831,"longitude": 76.361444,"datetime": "2019-05-10 21:12:44.920514","temperature": 0.9}
-{"id": 63,"speed": 2.0,"altitude": 13.88,"latitude": 67.830545,"longitude": 72.639843,"datetime": "2019-05-10 21:12:44.920528","temperature": 5.5}
-{"id": 64,"speed": 8.2,"altitude": 18.09,"latitude": 18.706813,"longitude": 42.602448,"datetime": "2019-05-10 21:12:44.920541","temperature": 0.1}
-{"id": 65,"speed": 5.0,"altitude": 3.75,"latitude": 81.822513,"longitude": 56.787271,"datetime": "2019-05-10 21:12:44.920553","temperature": 1.4}
-{"id": 66,"speed": 9.8,"altitude": 15.07,"latitude": 50.192382,"longitude": 93.487278,"datetime": "2019-05-10 21:12:44.920566","temperature": 0.0}
-{"id": 67,"speed": 3.3,"altitude": 5.11,"latitude": 58.724831,"longitude": 78.0687,"datetime": "2019-05-10 21:12:44.920578","temperature": 8.0}
-{"id": 68,"speed": 6.6,"altitude": 8.45,"latitude": 92.218333,"longitude": 23.360868,"datetime": "2019-05-10 21:12:44.920591","temperature": 6.6}
-{"id": 69,"speed": 6.2,"altitude": 17.01,"latitude": 36.087719,"longitude": 8.015965,"datetime": "2019-05-10 21:12:44.920603","temperature": 1.7}
-{"id": 70,"speed": 1.7,"altitude": 6.74,"latitude": 83.298051,"longitude": 11.659306,"datetime": "2019-05-10 21:12:44.920616","temperature": 0.1}
-{"id": 71,"speed": 5.5,"altitude": 6.55,"latitude": 69.497253,"longitude": 40.92047,"datetime": "2019-05-10 21:12:44.920629","temperature": 5.5}
-{"id": 72,"speed": 0.8,"altitude": 18.13,"latitude": 39.598643,"longitude": 14.354644,"datetime": "2019-05-10 21:12:44.920641","temperature": 5.4}
-{"id": 73,"speed": 2.9,"altitude": 0.04,"latitude": 42.487597,"longitude": 17.273457,"datetime": "2019-05-10 21:12:44.920654","temperature": 2.7}
-{"id": 74,"speed": 8.0,"altitude": 9.75,"latitude": 15.9074,"longitude": 7.148521,"datetime": "2019-05-10 21:12:44.920666","temperature": 8.6}
-{"id": 75,"speed": 3.0,"altitude": 5.88,"latitude": 59.130701,"longitude": 33.182666,"datetime": "2019-05-10 21:12:44.920679","temperature": 8.3}
-{"id": 76,"speed": 9.1,"altitude": 12.15,"latitude": 5.657653,"longitude": 8.76728,"datetime": "2019-05-10 21:12:44.920691","temperature": 3.1}
-{"id": 77,"speed": 0.7,"altitude": 15.22,"latitude": 50.38732,"longitude": 97.133741,"datetime": "2019-05-10 21:12:44.920704","temperature": 4.0}
-{"id": 78,"speed": 7.0,"altitude": 16.84,"latitude": 18.159286,"longitude": 88.314889,"datetime": "2019-05-10 21:12:44.920717","temperature": 7.4}
-{"id": 79,"speed": 6.7,"altitude": 2.48,"latitude": 14.218624,"longitude": 10.035074,"datetime": "2019-05-10 21:12:44.920729","temperature": 7.3}
-{"id": 80,"speed": 4.2,"altitude": 9.05,"latitude": 29.131511,"longitude": 15.405591,"datetime": "2019-05-10 21:12:44.920742","temperature": 8.4}
-{"id": 81,"speed": 1.6,"altitude": 12.04,"latitude": 61.757089,"longitude": 94.485294,"datetime": "2019-05-10 21:12:44.920754","temperature": 5.5}
-{"id": 82,"speed": 3.0,"altitude": 10.11,"latitude": 23.325991,"longitude": 63.326916,"datetime": "2019-05-10 21:12:44.920767","temperature": 1.4}
-{"id": 83,"speed": 5.9,"altitude": 7.06,"latitude": 35.9544,"longitude": 30.293006,"datetime": "2019-05-10 21:12:44.920779","temperature": 6.3}
-{"id": 84,"speed": 4.9,"altitude": 9.67,"latitude": 96.448683,"longitude": 25.991112,"datetime": "2019-05-10 21:12:44.920792","temperature": 9.9}
-{"id": 85,"speed": 2.8,"altitude": 8.09,"latitude": 23.782328,"longitude": 48.433323,"datetime": "2019-05-10 21:12:44.920804","temperature": 0.3}
-{"id": 86,"speed": 6.8,"altitude": 16.56,"latitude": 91.121924,"longitude": 73.190015,"datetime": "2019-05-10 21:12:44.920817","temperature": 3.4}
-{"id": 87,"speed": 5.0,"altitude": 2.54,"latitude": 87.422093,"longitude": 88.127495,"datetime": "2019-05-10 21:12:44.920830","temperature": 6.7}
-{"id": 88,"speed": 4.6,"altitude": 7.47,"latitude": 98.731001,"longitude": 59.757527,"datetime": "2019-05-10 21:12:44.920842","temperature": 3.6}
-{"id": 89,"speed": 2.2,"altitude": 1.1,"latitude": 66.403457,"longitude": 81.4215,"datetime": "2019-05-10 21:12:44.920855","temperature": 6.1}
-{"id": 90,"speed": 9.3,"altitude": 2.24,"latitude": 79.58786,"longitude": 85.159835,"datetime": "2019-05-10 21:12:44.920867","temperature": 8.4}
-{"id": 91,"speed": 8.4,"altitude": 3.34,"latitude": 56.233916,"longitude": 6.355642,"datetime": "2019-05-10 21:12:44.920879","temperature": 0.0}
-{"id": 92,"speed": 7.1,"altitude": 18.13,"latitude": 9.547003,"longitude": 77.782806,"datetime": "2019-05-10 21:12:44.920892","temperature": 0.9}
-{"id": 93,"speed": 9.4,"altitude": 1.88,"latitude": 6.415101,"longitude": 76.571547,"datetime": "2019-05-10 21:12:44.920904","temperature": 0.1}
-{"id": 94,"speed": 8.3,"altitude": 17.87,"latitude": 83.472417,"longitude": 13.135379,"datetime": "2019-05-10 21:12:44.920917","temperature": 4.5}
-{"id": 95,"speed": 6.8,"altitude": 7.08,"latitude": 19.193235,"longitude": 15.838839,"datetime": "2019-05-10 21:12:44.920929","temperature": 1.9}
-{"id": 96,"speed": 4.6,"altitude": 7.96,"latitude": 58.599819,"longitude": 85.999364,"datetime": "2019-05-10 21:12:44.920942","temperature": 8.4}
-{"id": 97,"speed": 6.7,"altitude": 4.87,"latitude": 44.641622,"longitude": 90.73249,"datetime": "2019-05-10 21:12:44.920954","temperature": 1.4}
-{"id": 98,"speed": 8.9,"altitude": 19.82,"latitude": 34.268167,"longitude": 53.873054,"datetime": "2019-05-10 21:12:44.920967","temperature": 2.0}
-{"id": 99,"speed": 8.9,"altitude": 6.62,"latitude": 25.900622,"longitude": 28.297659,"datetime": "2019-05-10 21:12:44.920979","temperature": 9.8}
-{"id": 100,"speed": 6.6,"altitude": 18.13,"latitude": 18.969002,"longitude": 91.90268,"datetime": "2019-05-10 21:12:44.920991","temperature": 1.0}
+{"id":1,"speed":9.5,"altitude":1.04,"latitude":72.09499,"longitude":61.025403,"datetime":"2019-05-10 21:18:41.940628","temperature":9.9,"battery":64.1}
+{"id":2,"speed":1.6,"altitude":0.26,"latitude":26.322137,"longitude":18.696468,"datetime":"2019-05-10 21:18:41.940666","temperature":3.6,"battery":55.2}
+{"id":3,"speed":8.6,"altitude":12.71,"latitude":70.935845,"longitude":28.970675,"datetime":"2019-05-10 21:18:41.940688","temperature":3.3,"battery":14.9}
+{"id":4,"speed":7.6,"altitude":7.46,"latitude":93.98446,"longitude":25.677405,"datetime":"2019-05-10 21:18:41.940705","temperature":7.2,"battery":61.0}
+{"id":5,"speed":3.6,"altitude":12.82,"latitude":41.702046,"longitude":55.234299,"datetime":"2019-05-10 21:18:41.940720","temperature":1.5,"battery":36.9}
+{"id":6,"speed":4.9,"altitude":14.73,"latitude":76.70005,"longitude":76.072011,"datetime":"2019-05-10 21:18:41.940736","temperature":4.5,"battery":54.4}
+{"id":7,"speed":6.6,"altitude":11.16,"latitude":73.249165,"longitude":10.466642,"datetime":"2019-05-10 21:18:41.940751","temperature":4.6,"battery":19.5}
+{"id":8,"speed":5.6,"altitude":13.09,"latitude":68.269966,"longitude":83.262645,"datetime":"2019-05-10 21:18:41.940766","temperature":8.5,"battery":14.2}
+{"id":9,"speed":5.8,"altitude":5.4,"latitude":39.546799,"longitude":60.867702,"datetime":"2019-05-10 21:18:41.940781","temperature":7.9,"battery":41.0}
+{"id":10,"speed":9.3,"altitude":1.81,"latitude":58.667356,"longitude":9.248498,"datetime":"2019-05-10 21:18:41.940797","temperature":9.5,"battery":29.9}
+{"id":11,"speed":0.3,"altitude":17.29,"latitude":33.231229,"longitude":41.0933,"datetime":"2019-05-10 21:18:41.940813","temperature":1.1,"battery":82.3}
+{"id":12,"speed":2.7,"altitude":4.61,"latitude":25.819687,"longitude":5.333817,"datetime":"2019-05-10 21:18:41.940828","temperature":8.8,"battery":48.0}
+{"id":13,"speed":6.9,"altitude":6.97,"latitude":59.546495,"longitude":63.388911,"datetime":"2019-05-10 21:18:41.940842","temperature":8.6,"battery":80.3}
+{"id":14,"speed":6.6,"altitude":5.63,"latitude":46.096654,"longitude":86.34974,"datetime":"2019-05-10 21:18:41.940857","temperature":0.0,"battery":8.6}
+{"id":15,"speed":0.7,"altitude":14.45,"latitude":30.743884,"longitude":64.251447,"datetime":"2019-05-10 21:18:41.940871","temperature":7.5,"battery":62.6}
+{"id":16,"speed":2.0,"altitude":19.21,"latitude":23.967451,"longitude":29.006271,"datetime":"2019-05-10 21:18:41.940886","temperature":9.1,"battery":79.0}
+{"id":17,"speed":0.5,"altitude":14.87,"latitude":48.975837,"longitude":47.158516,"datetime":"2019-05-10 21:18:41.940901","temperature":6.9,"battery":6.8}
+{"id":18,"speed":8.2,"altitude":9.97,"latitude":89.647328,"longitude":56.746046,"datetime":"2019-05-10 21:18:41.940916","temperature":2.8,"battery":54.4}
+{"id":19,"speed":0.2,"altitude":6.98,"latitude":50.107882,"longitude":81.806247,"datetime":"2019-05-10 21:18:41.940930","temperature":2.1,"battery":92.1}
+{"id":20,"speed":1.2,"altitude":12.08,"latitude":7.598118,"longitude":15.104008,"datetime":"2019-05-10 21:18:41.940945","temperature":1.9,"battery":34.5}
+{"id":21,"speed":1.7,"altitude":10.62,"latitude":97.287008,"longitude":31.06079,"datetime":"2019-05-10 21:18:41.940959","temperature":0.6,"battery":84.5}
+{"id":22,"speed":4.7,"altitude":18.37,"latitude":88.328783,"longitude":83.971863,"datetime":"2019-05-10 21:18:41.940974","temperature":0.1,"battery":73.7}
+{"id":23,"speed":6.1,"altitude":3.02,"latitude":31.506119,"longitude":97.911541,"datetime":"2019-05-10 21:18:41.940988","temperature":6.9,"battery":41.2}
+{"id":24,"speed":1.5,"altitude":4.99,"latitude":5.593379,"longitude":51.423333,"datetime":"2019-05-10 21:18:41.941003","temperature":4.3,"battery":20.9}
+{"id":25,"speed":8.5,"altitude":7.58,"latitude":88.42236,"longitude":86.867827,"datetime":"2019-05-10 21:18:41.941017","temperature":5.5,"battery":28.4}
+{"id":26,"speed":7.5,"altitude":17.87,"latitude":31.027292,"longitude":17.161942,"datetime":"2019-05-10 21:18:41.941031","temperature":2.5,"battery":46.7}
+{"id":27,"speed":2.6,"altitude":4.91,"latitude":63.087442,"longitude":85.471614,"datetime":"2019-05-10 21:18:41.941046","temperature":8.3,"battery":77.8}
+{"id":28,"speed":6.3,"altitude":5.21,"latitude":67.23027,"longitude":93.972099,"datetime":"2019-05-10 21:18:41.941060","temperature":9.6,"battery":8.4}
+{"id":29,"speed":7.7,"altitude":11.18,"latitude":92.341843,"longitude":69.780278,"datetime":"2019-05-10 21:18:41.941075","temperature":5.8,"battery":75.3}
+{"id":30,"speed":1.3,"altitude":9.34,"latitude":28.658549,"longitude":86.586912,"datetime":"2019-05-10 21:18:41.941089","temperature":6.3,"battery":21.4}
+{"id":31,"speed":3.1,"altitude":11.14,"latitude":98.592032,"longitude":88.23877,"datetime":"2019-05-10 21:18:41.941105","temperature":7.6,"battery":34.7}
+{"id":32,"speed":6.8,"altitude":3.3,"latitude":57.319647,"longitude":93.423682,"datetime":"2019-05-10 21:18:41.941119","temperature":1.8,"battery":21.9}
+{"id":33,"speed":1.3,"altitude":2.52,"latitude":1.20802,"longitude":76.614052,"datetime":"2019-05-10 21:18:41.941134","temperature":8.1,"battery":0.1}
+{"id":34,"speed":1.6,"altitude":4.46,"latitude":4.437628,"longitude":97.385897,"datetime":"2019-05-10 21:18:41.941156","temperature":7.6,"battery":71.2}
+{"id":35,"speed":5.0,"altitude":6.52,"latitude":18.41858,"longitude":44.388662,"datetime":"2019-05-10 21:18:41.941171","temperature":5.1,"battery":68.6}
+{"id":36,"speed":5.8,"altitude":12.91,"latitude":52.514564,"longitude":3.636264,"datetime":"2019-05-10 21:18:41.941185","temperature":0.2,"battery":55.3}
+{"id":37,"speed":7.2,"altitude":16.28,"latitude":7.201216,"longitude":68.54803,"datetime":"2019-05-10 21:18:41.941200","temperature":8.8,"battery":12.7}
+{"id":38,"speed":6.7,"altitude":13.53,"latitude":59.640913,"longitude":74.802756,"datetime":"2019-05-10 21:18:41.941214","temperature":6.3,"battery":19.9}
+{"id":39,"speed":7.5,"altitude":9.14,"latitude":12.961072,"longitude":96.904714,"datetime":"2019-05-10 21:18:41.941229","temperature":5.3,"battery":95.7}
+{"id":40,"speed":2.3,"altitude":14.6,"latitude":86.859774,"longitude":38.293514,"datetime":"2019-05-10 21:18:41.941243","temperature":1.6,"battery":29.2}
+{"id":41,"speed":5.0,"altitude":6.54,"latitude":86.725034,"longitude":15.910894,"datetime":"2019-05-10 21:18:41.941257","temperature":7.2,"battery":58.3}
+{"id":42,"speed":2.8,"altitude":14.31,"latitude":30.022927,"longitude":74.783384,"datetime":"2019-05-10 21:18:41.941271","temperature":2.7,"battery":49.1}
+{"id":43,"speed":0.3,"altitude":7.95,"latitude":11.066254,"longitude":21.883804,"datetime":"2019-05-10 21:18:41.941286","temperature":9.5,"battery":4.5}
+{"id":44,"speed":8.4,"altitude":17.35,"latitude":26.402034,"longitude":70.935432,"datetime":"2019-05-10 21:18:41.941300","temperature":2.7,"battery":47.8}
+{"id":45,"speed":8.6,"altitude":8.61,"latitude":95.358677,"longitude":48.768842,"datetime":"2019-05-10 21:18:41.941314","temperature":4.1,"battery":20.5}
+{"id":46,"speed":4.3,"altitude":10.69,"latitude":29.305851,"longitude":47.87206,"datetime":"2019-05-10 21:18:41.941329","temperature":10.0,"battery":0.3}
+{"id":47,"speed":3.4,"altitude":1.9,"latitude":86.535911,"longitude":38.628934,"datetime":"2019-05-10 21:18:41.941344","temperature":1.8,"battery":6.5}
+{"id":48,"speed":0.4,"altitude":3.37,"latitude":27.712069,"longitude":62.841622,"datetime":"2019-05-10 21:18:41.941358","temperature":5.0,"battery":50.5}
+{"id":49,"speed":6.0,"altitude":18.07,"latitude":36.406341,"longitude":43.028093,"datetime":"2019-05-10 21:18:41.941373","temperature":3.9,"battery":73.2}
+{"id":50,"speed":1.7,"altitude":19.32,"latitude":59.640946,"longitude":66.995372,"datetime":"2019-05-10 21:18:41.941387","temperature":0.4,"battery":81.5}
+{"id":51,"speed":0.5,"altitude":18.47,"latitude":82.515382,"longitude":45.834199,"datetime":"2019-05-10 21:18:41.941402","temperature":3.2,"battery":39.0}
+{"id":52,"speed":2.4,"altitude":6.63,"latitude":12.085737,"longitude":36.180093,"datetime":"2019-05-10 21:18:41.941416","temperature":5.4,"battery":19.3}
+{"id":53,"speed":2.2,"altitude":7.51,"latitude":46.52305,"longitude":84.802103,"datetime":"2019-05-10 21:18:41.941434","temperature":6.7,"battery":99.6}
+{"id":54,"speed":3.0,"altitude":6.12,"latitude":87.35697,"longitude":25.171573,"datetime":"2019-05-10 21:18:41.941449","temperature":2.9,"battery":5.5}
+{"id":55,"speed":1.4,"altitude":8.79,"latitude":17.511344,"longitude":24.178209,"datetime":"2019-05-10 21:18:41.941494","temperature":3.0,"battery":69.1}
+{"id":56,"speed":2.0,"altitude":16.15,"latitude":61.53488,"longitude":47.826253,"datetime":"2019-05-10 21:18:41.941513","temperature":5.3,"battery":46.3}
+{"id":57,"speed":3.8,"altitude":13.58,"latitude":59.5981,"longitude":26.336614,"datetime":"2019-05-10 21:18:41.941528","temperature":6.5,"battery":37.5}
+{"id":58,"speed":1.3,"altitude":10.05,"latitude":59.173603,"longitude":19.90489,"datetime":"2019-05-10 21:18:41.941543","temperature":4.0,"battery":35.2}
+{"id":59,"speed":2.9,"altitude":14.05,"latitude":1.088783,"longitude":59.270998,"datetime":"2019-05-10 21:18:41.941557","temperature":7.9,"battery":92.5}
+{"id":60,"speed":0.8,"altitude":7.01,"latitude":77.898572,"longitude":39.31774,"datetime":"2019-05-10 21:18:41.941571","temperature":6.0,"battery":88.3}
+{"id":61,"speed":6.9,"altitude":19.72,"latitude":52.768377,"longitude":54.279577,"datetime":"2019-05-10 21:18:41.941586","temperature":4.5,"battery":91.4}
+{"id":62,"speed":9.2,"altitude":7.74,"latitude":3.384947,"longitude":66.764461,"datetime":"2019-05-10 21:18:41.941601","temperature":6.5,"battery":56.6}
+{"id":63,"speed":7.3,"altitude":7.18,"latitude":28.492435,"longitude":65.2025,"datetime":"2019-05-10 21:18:41.941615","temperature":3.7,"battery":69.7}
+{"id":64,"speed":2.3,"altitude":18.38,"latitude":93.655855,"longitude":87.838779,"datetime":"2019-05-10 21:18:41.941630","temperature":6.4,"battery":48.3}
+{"id":65,"speed":5.3,"altitude":0.17,"latitude":26.070637,"longitude":66.654684,"datetime":"2019-05-10 21:18:41.941644","temperature":4.6,"battery":15.6}
+{"id":66,"speed":9.7,"altitude":2.1,"latitude":37.505847,"longitude":25.365298,"datetime":"2019-05-10 21:18:41.941659","temperature":5.3,"battery":49.3}
+{"id":67,"speed":7.2,"altitude":16.18,"latitude":68.32873,"longitude":15.137954,"datetime":"2019-05-10 21:18:41.941673","temperature":5.8,"battery":96.4}
+{"id":68,"speed":3.7,"altitude":15.74,"latitude":54.123014,"longitude":60.769634,"datetime":"2019-05-10 21:18:41.941687","temperature":9.0,"battery":76.1}
+{"id":69,"speed":4.8,"altitude":16.32,"latitude":94.005816,"longitude":18.931023,"datetime":"2019-05-10 21:18:41.941701","temperature":5.1,"battery":87.6}
+{"id":70,"speed":3.8,"altitude":9.71,"latitude":39.367904,"longitude":98.596959,"datetime":"2019-05-10 21:18:41.941716","temperature":0.1,"battery":51.0}
+{"id":71,"speed":2.6,"altitude":18.15,"latitude":5.360092,"longitude":86.129374,"datetime":"2019-05-10 21:18:41.941730","temperature":5.8,"battery":48.2}
+{"id":72,"speed":0.4,"altitude":9.02,"latitude":72.444353,"longitude":33.821619,"datetime":"2019-05-10 21:18:41.941745","temperature":3.2,"battery":6.0}
+{"id":73,"speed":6.5,"altitude":18.8,"latitude":57.272562,"longitude":14.01227,"datetime":"2019-05-10 21:18:41.941760","temperature":7.0,"battery":89.2}
+{"id":74,"speed":2.1,"altitude":19.24,"latitude":62.615059,"longitude":90.71674,"datetime":"2019-05-10 21:18:41.941774","temperature":7.2,"battery":47.8}
+{"id":75,"speed":7.8,"altitude":11.13,"latitude":4.364199,"longitude":70.170818,"datetime":"2019-05-10 21:18:41.941788","temperature":2.1,"battery":34.7}
+{"id":76,"speed":3.6,"altitude":4.86,"latitude":57.949782,"longitude":80.879118,"datetime":"2019-05-10 21:18:41.941803","temperature":6.9,"battery":74.6}
+{"id":77,"speed":4.3,"altitude":6.73,"latitude":33.965644,"longitude":44.447669,"datetime":"2019-05-10 21:18:41.941817","temperature":1.2,"battery":30.9}
+{"id":78,"speed":4.7,"altitude":13.09,"latitude":88.870694,"longitude":91.566679,"datetime":"2019-05-10 21:18:41.941831","temperature":7.5,"battery":46.5}
+{"id":79,"speed":3.2,"altitude":3.04,"latitude":31.428893,"longitude":43.081704,"datetime":"2019-05-10 21:18:41.941845","temperature":5.6,"battery":70.2}
+{"id":80,"speed":5.9,"altitude":7.39,"latitude":72.023368,"longitude":54.317782,"datetime":"2019-05-10 21:18:41.941859","temperature":6.7,"battery":59.2}
+{"id":81,"speed":3.0,"altitude":9.33,"latitude":13.828199,"longitude":70.411313,"datetime":"2019-05-10 21:18:41.941874","temperature":3.3,"battery":56.8}
+{"id":82,"speed":4.9,"altitude":8.21,"latitude":67.234955,"longitude":71.965425,"datetime":"2019-05-10 21:18:41.941888","temperature":5.5,"battery":59.1}
+{"id":83,"speed":0.6,"altitude":8.34,"latitude":49.050006,"longitude":0.544373,"datetime":"2019-05-10 21:18:41.941902","temperature":0.4,"battery":14.7}
+{"id":84,"speed":2.8,"altitude":6.33,"latitude":48.50208,"longitude":47.181853,"datetime":"2019-05-10 21:18:41.941917","temperature":4.2,"battery":60.5}
+{"id":85,"speed":4.9,"altitude":1.61,"latitude":81.173192,"longitude":59.336959,"datetime":"2019-05-10 21:18:41.941931","temperature":7.3,"battery":87.6}
+{"id":86,"speed":3.3,"altitude":11.47,"latitude":47.480597,"longitude":92.025269,"datetime":"2019-05-10 21:18:41.941946","temperature":6.6,"battery":73.9}
+{"id":87,"speed":6.0,"altitude":19.14,"latitude":5.613781,"longitude":7.527071,"datetime":"2019-05-10 21:18:41.941960","temperature":1.4,"battery":10.8}
+{"id":88,"speed":4.1,"altitude":0.23,"latitude":66.982419,"longitude":89.102924,"datetime":"2019-05-10 21:18:41.941974","temperature":5.2,"battery":18.7}
+{"id":89,"speed":7.0,"altitude":12.1,"latitude":97.324076,"longitude":86.461898,"datetime":"2019-05-10 21:18:41.941989","temperature":3.7,"battery":96.0}
+{"id":90,"speed":0.8,"altitude":8.66,"latitude":69.494329,"longitude":41.733022,"datetime":"2019-05-10 21:18:41.942003","temperature":9.7,"battery":38.8}
+{"id":91,"speed":1.9,"altitude":5.34,"latitude":56.922463,"longitude":84.985953,"datetime":"2019-05-10 21:18:41.942017","temperature":9.6,"battery":72.1}
+{"id":92,"speed":3.1,"altitude":11.4,"latitude":56.378739,"longitude":3.760391,"datetime":"2019-05-10 21:18:41.942032","temperature":0.9,"battery":75.9}
+{"id":93,"speed":6.6,"altitude":4.66,"latitude":88.222962,"longitude":59.703412,"datetime":"2019-05-10 21:18:41.942046","temperature":7.3,"battery":63.8}
+{"id":94,"speed":2.8,"altitude":13.96,"latitude":99.06578,"longitude":70.400219,"datetime":"2019-05-10 21:18:41.942060","temperature":8.7,"battery":69.4}
+{"id":95,"speed":0.1,"altitude":5.45,"latitude":70.738357,"longitude":63.489356,"datetime":"2019-05-10 21:18:41.942075","temperature":2.1,"battery":22.8}
+{"id":96,"speed":8.3,"altitude":15.23,"latitude":44.302599,"longitude":25.827885,"datetime":"2019-05-10 21:18:41.942089","temperature":4.7,"battery":2.9}
+{"id":97,"speed":0.0,"altitude":16.35,"latitude":73.616309,"longitude":46.716824,"datetime":"2019-05-10 21:18:41.942104","temperature":6.2,"battery":83.7}
+{"id":98,"speed":9.5,"altitude":5.81,"latitude":56.840156,"longitude":15.077231,"datetime":"2019-05-10 21:18:41.942118","temperature":8.2,"battery":99.7}
+{"id":99,"speed":1.3,"altitude":19.2,"latitude":87.41746,"longitude":49.046107,"datetime":"2019-05-10 21:18:41.942132","temperature":3.9,"battery":5.4}
+{"id":100,"speed":9.2,"altitude":5.38,"latitude":80.780723,"longitude":12.454385,"datetime":"2019-05-10 21:18:41.942146","temperature":9.2,"battery":22.3}
