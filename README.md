@@ -40,8 +40,13 @@ I) Mandatory (15 points)
 Adrien Broussolle
 
 ## How to run
-You need sbt, and a Java jdk
-go to the project folder
-run `sbt`
-the interactive shell is now launched, you can `~run` to run the project
+You need sbt, a Java jdk, cassandra
+go to the root folder
 
+first run `cassandra -f` to launch cassandra server
+run `make server` to run our server
+run `make run` to run our generator
+
+you will need to enter the name of a directory containing well-formated json
+logs from our drones, that will be sent to cassandra and queried by the server
+when needed to display the page `/list`
