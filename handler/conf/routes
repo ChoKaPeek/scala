@@ -2,9 +2,8 @@
 # This file deines all application routes (Higer priority routes first)
 # ~~~~
 
-GET / controllers.IndexController.index()
-GET /index controllers.IndexController.index()
+GET / controllers.IndexController.list()
 
-GET /hello controllers.IndexController.hello()
+GET /list controllers.IndexController.list()
 
 POST /msg controllers.IndexController.msg()
