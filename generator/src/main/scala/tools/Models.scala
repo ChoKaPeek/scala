@@ -1,3 +1,5 @@
+package tools
+
 object Models {
     case class Drone(id: Int, brand: String)
 

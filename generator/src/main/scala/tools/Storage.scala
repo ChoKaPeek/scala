@@ -1,3 +1,5 @@
+package tools
+
 import com.datastax.spark.connector._
 import org.apache.spark.sql.cassandra._
 import org.apache.spark.sql._

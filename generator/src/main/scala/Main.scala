@@ -1,7 +1,5 @@
-import Parser._
-import Storage._
-import Post._
-import Spark._
+import tools._
+import tools.Spark._
 
 object Main extends App {
     val path1 = "../data/population"
