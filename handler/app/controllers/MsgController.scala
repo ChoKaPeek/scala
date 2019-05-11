@@ -10,10 +10,10 @@ import play.api.libs.functional.syntax._
 class MsgController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
     def msg = Action {request =>
-        implicit val droneReads = Json.reads[Drone]
-        val json = request.body.asJson.get
-        val drone = json.as[Drone]
-        println(drone)
-        Ok
+      implicit val droneReads = Json.reads[Drone]
+      val json = request.body.asJson.get
+      val drone = json.as[Drone]
+      println(drone)
+      Ok
     }
 }
