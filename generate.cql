@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS test.log;
 DROP TABLE IF EXISTS test.drone;
 DROP KEYSPACE IF EXISTS test;
 
@@ -5,6 +6,14 @@ CREATE KEYSPACE test WITH REPLICATION = {'class': 'SimpleStrategy', 'replication
 
 CREATE TABLE test.drone (
   id INT,
+  type VARCHAR,
+
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE test.log (
+  id INT,
+  drone_id INT,
   speed FLOAT,
   altitude DOUBLE,
   latitude DOUBLE,
