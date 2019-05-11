@@ -8,6 +8,7 @@ import play.api.libs.json.Reads._
 import play.api.libs.functional.syntax._
 
 import tools.Models._
+import tools.Overrides._
 import tools.Spark._
 import tools.Storage._
 
@@ -15,32 +16,26 @@ class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
     def index() = Action {
         val user = Map("Undef" -> "N/A")
-        val data = readLog()
-
-        val rows: String = data.select("message").collect().map(_.getString(0)).mkString("\n")
-        Ok(views.html.hello("Welcome to DroneTech", user, rows))
+        val data = readLog().toList
+        Ok(views.html.hello("Welcome to DroneTech", user, data))
     }
 
     def list() = Action {
         val user = Map("Undef" -> "N/A")
-        val data = readLog()
-
-        val rows: String = data.select("message").collect().map(_.getString(0)).mkString("\n")
-        Ok(views.html.hello("Welcome to DroneTech", user, rows))
+        val data = readLog().toList
+        Ok(views.html.hello("Welcome to DroneTech", user, data))
     }
 
     def msg() = Action { request =>
-        request.body.asJson.map { json =>
-        json.validate[Log].map { 
-          log => writeLog(log);
-                 Ok("Proper Json");
-        }.recoverTotal{
-          e =>  println("Detected an error");
-                BadRequest("Detected error:");
+            spark.read.json(Seq(request.body).toDS).collect.toVector match {
+                case Vector(id, id_drone, speed, altitude, latitude, longitude, datetime, temperature, battery) => writeLog(Seq(Log(id.toInt, id_drone.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toFloat, battery.toFloat)));
+                                                                                                                  Ok("Proper Json")
+                case _ => println("Detected an error");
+                          BadRequest("Detected error:")
+            }
+        }.getOrElse {
+            println("Completely failed");
+            BadRequest("Expecting Json data")
         }
-      }.getOrElse {
-        println("Completely failed");
-        BadRequest("Expecting Json data")
-      }
     }
 }
