@@ -1,4 +1,4 @@
-@(title: String, user: Map[String, String], posts: List[Map[String, String]])
+@(title: String, user: Map[String, String], posts: List[controllers.Drone])
 @layout(title) {
         @if(user.get("username").isDefined) {
             <h1>Hello, @user.getOrElse("username", "guest")!</h1>
@@ -6,6 +6,6 @@
             <h1>Hello, Guest</h1>
         }
         @for(post <- posts) {
-        <div><p>@post.getOrElse("author", "Guest") says: <b>@post.getOrElse("body", "No body found")</b></div>
+            <div><p>@post</div>
         }
 }
