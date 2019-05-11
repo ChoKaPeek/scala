@@ -5,3 +5,6 @@ run: db
 
 db:
 	cqlsh --file ${DB_CREATE}
+
+server:
+	cd handler && sbt run ~
