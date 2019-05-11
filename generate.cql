@@ -5,22 +5,22 @@ DROP KEYSPACE IF EXISTS test;
 CREATE KEYSPACE test WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1 };
 
 CREATE TABLE test.drone (
-  id INT,
-  type VARCHAR,
+  id    INT,
+  brand VARCHAR,
 
   PRIMARY KEY (id)
 );
 
 CREATE TABLE test.log (
-  id INT,
-  drone_id INT,
-  speed FLOAT,
-  altitude DOUBLE,
-  latitude DOUBLE,
-  longitude DOUBLE,
-  datetime VARCHAR,
+  id          INT,
+  id_drone    INT,
+  speed       FLOAT,
+  altitude    DOUBLE,
+  latitude    DOUBLE,
+  longitude   DOUBLE,
+  datetime    VARCHAR,
   temperature INT,
-  battery FLOAT,
+  battery     FLOAT,
 
   PRIMARY KEY (id)
 );
