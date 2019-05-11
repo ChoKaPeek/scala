@@ -24,7 +24,8 @@ def random_float(order, max_dec):
 def generate_content(idx):
     ordered = collections.OrderedDict({
         "id": idx,
-        "speed": random_float(10, 1), 
+        "id_drone": random.randint(1, 9),
+        "speed": random_float(10, 1),
         "altitude": random_float(20, 2),
         "latitude": random_float(100, 6),
         "longitude": random_float(100, 6),
