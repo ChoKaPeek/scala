@@ -9,6 +9,9 @@ import play.api.libs.json._
 
 import play.api.libs.functional.syntax._
 
+import org.apache.spark._
+import org.apache.spark._
+
 case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double,
                  longitude: Double, datetime: String, temperature: Float,
                  battery: Float)
@@ -16,8 +19,20 @@ case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double,
 class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
     var fixme: List[Drone] = List();
+    val spark = SparkSession.builder()
+                            .master("local")
+                            .appName("Company")
+                            .config("spark.cassandra.connection.host", "localhost")
+                            .getOrCreate()
+
     def index() = Action {
-      Ok(fixme.toString())
+        val data: DataFrame = spark.read
+                                   .cassandraFormat("POST_LINE", "keyspace")
+                                   .options(ReadConf.SplitSizeInMBParam.option(32))
+                                   .load()
+
+        val rows: String = data.select("message").collect().map(_.getString(0)).mkString("\n")
+        Ok(rows)
     }
 
     def list() = Action {
