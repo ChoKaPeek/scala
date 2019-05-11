@@ -13,8 +13,6 @@ case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double,
                  longitude: Double, datetime: String, temperature: Float,
                  battery: Float)
 
-
-
 class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
     var fixme: List[Drone] = List();
@@ -22,19 +20,9 @@ class IndexController @Inject()(val controllerComponents: ControllerComponents)
       Ok(fixme.toString())
     }
 
-    def hello() = Action {
-      //val user = Map("username" -> "login_x")
+    def list() = Action {
       val user = Map("Undef" -> "N/A")
-      val posts = List(
-        Map(
-          "author" -> "login_x",
-          "body" -> "Getting started with Play"
-          ),
-        Map(
-          "author" -> "ing1",
-          "body" -> "Getting started with C"
-          )
-        )
+      val posts = fixme
       Ok(views.html.hello("Welcome to DroneTech", user, posts))
     }
 
