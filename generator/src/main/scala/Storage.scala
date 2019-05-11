@@ -1,17 +1,26 @@
 import com.datastax.spark.connector._
 import org.apache.spark.sql.cassandra._
 import org.apache.spark.sql._
-import Drone._
+import Models._
 import Spark._
 
-class Storage {
-    def write (sequence: Seq[Drone], table: String): Unit = {
+object Storage {
+    def writeDrone(sequence: Seq[Drone]): Unit = {
         val rdd = sc.parallelize(sequence)
-        rdd.saveToCassandra("test", table,
-            SomeColumns("id", "speed", "altitude", "latitude", "longitude", "datetime", "temperature", "battery"))
+        rdd.saveToCassandra("test", "drone",
+            SomeColumns("id", "brand"))
+    }
+    def writeLog(sequence: Seq[Log]): Unit = {
+        val rdd = sc.parallelize(sequence)
+        rdd.saveToCassandra("test", "log",
+            SomeColumns("id", "id_drone", "speed", "altitude", "latitude", "longitude", "datetime", "temperature", "battery"))
     }
     
-    def read (table: String): Array[Drone] = {
-        sc.cassandraTable[Drone]("test", table).collect
+    def readDrone(): Array[Drone] = {
+        sc.cassandraTable[Drone]("test", "drone").collect
+    }
+
+    def readLog(): Array[Log] = {
+        sc.cassandraTable[Log]("test", "log").collect
     }
 }

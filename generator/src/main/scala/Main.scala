@@ -1,12 +1,19 @@
-import Drone._
+import Parser._
+import Storage._
+import Post._
+import Spark._
 
 object Main extends App {
-    println("Welcome, please enter the path to given files")
-    val path = scala.io.StdIn.readLine()
-    val parser = new Parser(path)
-    val storage = new Storage()
-    val list = parser.parse()
-    list.map {
-      elt => storage.write(elt, "drone")
-    }
+    val path1 = "../data/population"
+    val drones = Parser.serializeDrone(path1)
+    drones.map { drone => Storage.writeDrone(drone) }
+    val logs = Parser.serializeLog(path1)
+    logs.map { log => Storage.writeLog(log) }
+
+    println("Please enter the path to json logs (../data/logs)")
+    val path2 = scala.io.StdIn.readLine()
+    val stream = Parser.parse(path2)
+    stream.map { elt => elt.map { json => Post.sendToBase(json) } }
+
+    spark.stop
 }

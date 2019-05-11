@@ -1,5 +1,3 @@
-import Drone._
-
 /* Added for sending to handler */
 import org.apache.commons._
 import org.apache.http._
@@ -10,7 +8,7 @@ import org.apache.http.impl.client.DefaultHttpClient
 import org.apache.http.client.entity.UrlEncodedFormEntity
 import org.apache.http.entity.StringEntity
 
-class Post() {
+object Post {
 
     def sendToBase(json_string: String) = {
         val url = "http://localhost:9000/msg";
