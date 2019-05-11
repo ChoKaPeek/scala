@@ -52,9 +52,8 @@ object Parser {
         collection.Seq() ++ fileContents
     }
 
-    def parseJson(file: File): Seq[String] = {
-        val df = spark.read.json(file.getPath()) // may need to close fd
-        df.map(row => row.mkString).collect
+    def parseJson(file: File): List[String] = {
+        Source.fromFile(file).getLines().toList
     }
 
     def serializeLog(dir: String): List[Seq[Log]] = {

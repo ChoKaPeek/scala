@@ -22,5 +22,6 @@ object Post {
         val response = client.execute(post)
         //println("--- HEADERS ---")
         //response.getAllHeaders.foreach(arg => println(arg))
+        // need to handle an error
     }
 }

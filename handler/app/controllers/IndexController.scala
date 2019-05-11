@@ -16,8 +16,7 @@ class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
     def index() = Action {
         val user = Map("Undef" -> "N/A")
-        val data = readLog().toList
-        Ok(views.html.hello("Welcome to DroneTech", user, data))
+        Ok(views.html.hello("Welcome to DroneTech", user))
     }
 
     def list() = Action {
@@ -27,15 +26,17 @@ class IndexController @Inject()(val controllerComponents: ControllerComponents)
     }
 
     def msg() = Action { request =>
-            spark.read.json(Seq(request.body).toDS).collect.toVector match {
-                case Vector(id, id_drone, speed, altitude, latitude, longitude, datetime, temperature, battery) => writeLog(Seq(Log(id.toInt, id_drone.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toFloat, battery.toFloat)));
-                                                                                                                  Ok("Proper Json")
-                case _ => println("Detected an error");
-                          BadRequest("Detected error:")
-            }
-        }.getOrElse {
-            println("Completely failed");
-            BadRequest("Expecting Json data")
+        request.body.asJson.map { json =>
+        json.validate[Log].map { 
+          log => writeLog(Seq(log));
+                 Ok("Proper Json");
+        }.recoverTotal{
+          e =>  println("Detected an error");
+                BadRequest("Detected error:");
         }
+      }.getOrElse {
+        println("Completely failed");
+        BadRequest("Expecting Json data")
+      }
     }
 }
