@@ -4,61 +4,36 @@ import javax.inject._
 import play.api.mvc._
 import play.api.libs.json._
 import play.api.libs.json.Reads._
-import play.api.mvc._
-import play.api.libs.json._
 
 import play.api.libs.functional.syntax._
 
-import org.apache.spark._
-import org.apache.spark._
-
-case class Drone(id: Int, speed: Float, altitude: Float, latitude: Double,
-                 longitude: Double, datetime: String, temperature: Float,
-                 battery: Float)
+import tools.Models._
+import tools.Spark._
+import tools.Storage._
 
 class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
-    var fixme: List[Drone] = List();
-    val spark = SparkSession.builder()
-                            .master("local")
-                            .appName("Company")
-                            .config("spark.cassandra.connection.host", "localhost")
-                            .getOrCreate()
-
     def index() = Action {
-        val data: DataFrame = spark.read
-                                   .cassandraFormat("POST_LINE", "keyspace")
-                                   .options(ReadConf.SplitSizeInMBParam.option(32))
-                                   .load()
+        val user = Map("Undef" -> "N/A")
+        val data = readLog()
 
         val rows: String = data.select("message").collect().map(_.getString(0)).mkString("\n")
-        Ok(rows)
+        Ok(views.html.hello("Welcome to DroneTech", user, rows))
     }
 
     def list() = Action {
-      val user = Map("Undef" -> "N/A")
-      val posts = fixme
-      Ok(views.html.hello("Welcome to DroneTech", user, posts))
+        val user = Map("Undef" -> "N/A")
+        val data = readLog()
+
+        val rows: String = data.select("message").collect().map(_.getString(0)).mkString("\n")
+        Ok(views.html.hello("Welcome to DroneTech", user, rows))
     }
 
-    implicit object DroneReads extends Reads[Drone] {
-        def reads(json: JsValue) = JsSuccess(Drone(  // Has to be a JsResult, should be a case with the possibility of a JsFailure
-            (json \ "id").as[Int],
-            (json \ "speed").as[Float],
-            (json \ "altitude").as[Float],
-            (json \ "latitude").as[Double],
-            (json \ "longitude").as[Double],
-            (json \ "datetime").as[String],
-            (json \ "temperature").as[Float],
-            (json \ "battery").as[Float]
-        ))
-    }
-
-    def msg = Action { request =>
+    def msg() = Action { request =>
         request.body.asJson.map { json =>
-        json.validate[Drone].map { 
-          Drone => fixme = Drone :: fixme;
-            Ok("Proper Json");
+        json.validate[Log].map { 
+          log => writeLog(log);
+                 Ok("Proper Json");
         }.recoverTotal{
           e =>  println("Detected an error");
                 BadRequest("Detected error:");

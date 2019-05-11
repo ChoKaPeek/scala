@@ -1,4 +1,4 @@
-@(title: String, user: Map[String, String], posts: List[controllers.Drone])
+@(title: String, user: Map[String, String], posts: List[tools.Models.Log])
 @layout(title) {
         @if(user.get("username").isDefined) {
             <h1>Hello, @user.getOrElse("username", "guest")!</h1>
