@@ -1,6 +1,17 @@
 import play.api.libs.json._
 import scala.io.Source
 import java.io.File
+import java.util.ArrayList
+
+/* Added for sending to handler */
+import org.apache.commons._
+import org.apache.http._
+import org.apache.http.client._
+import org.apache.http.client.methods.HttpPost
+import org.apache.http.message.BasicNameValuePair
+import org.apache.http.impl.client.DefaultHttpClient
+import org.apache.http.client.entity.UrlEncodedFormEntity
+import org.apache.http.entity.StringEntity
 
 class Parser(dir: String) {
     
@@ -22,11 +33,28 @@ class Parser(dir: String) {
         ))
     }
 
-    def parseJson(file: File): Unit = {
-        val fileContents = Source.fromFile(file).getLines().toVector.map {
-            line => (Json.parse(line.mkString))
-        }
+    def sendToBase(json_string: String) = {
+      val url = "http://localhost:9000/msg";
+      val post = new HttpPost(url)
+      val client = new DefaultHttpClient
+      println(json_string)
+      post.setHeader("content-type", "application/json")
+      post.setEntity(new StringEntity(json_string))
+      val response = client.execute(post)
+      //println("--- HEADERS ---")
+      //response.getAllHeaders.foreach(arg => println(arg))
+    }
 
+
+    def parseJson(file: File): Unit = {
+        println("PARSING JSON")
+        val bufferedSource = Source.fromFile(file)
+        val fileContents = bufferedSource.getLines().toVector.map {
+            line => print("Processing: ");
+                    println(line);
+                    sendToBase(line)
+        }
+        bufferedSource.close()
         println(fileContents)
     }
 
@@ -34,7 +62,7 @@ class Parser(dir: String) {
         val bufferedSource = Source.fromFile(file)
         val fileContents = bufferedSource.getLines().drop(1).toVector.map {
             line => line.split(",").toVector.map(_.trim) match {
-                case Vector(id, speed, altitude, latitude, longitude, datetime, temperature, battery) => Drone(id.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toInt, battery.toInt)
+                case Vector(id, speed, altitude, latitude, longitude, datetime, temperature, battery) => Drone(id.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toFloat, battery.toInt)
                 case _ => println(s"WARNING UNKNOWN DATA FORMAT FOR LINE: $line")
                           None
             }
