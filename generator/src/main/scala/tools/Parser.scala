@@ -70,8 +70,9 @@ object Parser {
         list_seq_csv ++ list_seq_json
     }
 
-    def parse(dir: String): List[Seq[String]] = {
-        getListOfFiles(dir, List(".json")).map(parseJson(_))
+    def parse(dir: String, default: String = "../data/logs"): List[Seq[String]] = dir match {
+        case "" => getListOfFiles(default, List(".json")).map(parseJson(_))
+        case any => getListOfFiles(any, List(".json")).map(parseJson(_))
     }
 
     def getListOfFiles(path: String, extensions: List[String]): List[File] = {

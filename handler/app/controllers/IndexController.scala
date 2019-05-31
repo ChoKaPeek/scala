@@ -16,7 +16,8 @@ class IndexController @Inject()(val controllerComponents: ControllerComponents)
   extends BaseController {
     def index() = Action {
         val user = Map("Undef" -> "N/A")
-        Ok(views.html.hello("Welcome to DroneTech", user))
+        val data = readLog().toList
+        Ok(views.html.hello("Welcome to DroneTech", user, data))
     }
 
     def list() = Action {
