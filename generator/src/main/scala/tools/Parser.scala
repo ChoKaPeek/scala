@@ -17,37 +17,27 @@ object Parser {
         collection.Seq() ++ df.as[Drone].collect
     }
 
-    def parseLogJson(file: File): Seq[Log] = {
+    def parseJson(file: File): Seq[Any] = {
         val df = spark.read.json(file.getPath()) // may need to close fd
-            .select($"id".cast(IntegerType), $"id_drone".cast(IntegerType),
+
+        df.as[Log]
+         match .select($"id".cast(IntegerType), $"id_drone".cast(IntegerType),
                     $"speed".cast(FloatType), $"altitude".cast(FloatType), $"latitude".cast(DoubleType),
                     $"longitude".cast(DoubleType), $"datetime", $"temperature".cast(FloatType),
                     $"battery".cast(FloatType))
         collection.Seq() ++ df.as[Log].collect
     }
 
-    def parseDroneCSV(file: File): Seq[Drone] = {
-        val bufferedSource = Source.fromFile(file)
-        val fileContents = bufferedSource.getLines().drop(1).map {
-            line => line.split(",").toVector.map(_.trim) match {
-                case Vector(id, brand) => Drone(id.toInt, brand)
-                // TODO Handle others cases
-            }
-        }
-  
-        // conversion to seq
-        collection.Seq() ++ fileContents
-    }
-
-    def parseLogCSV(file: File): Seq[Log] = {
+    def parseCSV(file: File): Seq[Any] = {
         val bufferedSource = Source.fromFile(file)
         val fileContents = bufferedSource.getLines().drop(1).map {
             line => line.split(",").toVector.map(_.trim) match {
                 case Vector(id, id_drone, speed, altitude, latitude, longitude, datetime, temperature, battery) => Log(id.toInt, id_drone.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toFloat, battery.toFloat)
+                case Vector(id, brand) => Drone(id.toInt, brand)
                 // TODO Handle others cases
             }
         }
-  
+
         // conversion to seq
         collection.Seq() ++ fileContents
     }
@@ -56,58 +46,51 @@ object Parser {
         Source.fromFile(file).getLines().toList
     }
 
+    def serializePopulation(dir: String): List[Seq[Any]] = {
+        val list_seq_csv = getFiles(dir, List(".csv")).map(parseCSV(_))
+        val list_seq_json = getFiles(dir, List(".json")).map(parseJson(_))
+        list_seq_csv ++ list_seq_json
+    }
     def serializeLog(dir: String): List[Seq[Log]] = {
         val new_dir = dir + "/log"
-        val list_seq_csv = getListOfFiles(new_dir, List(".csv")).map(parseLogCSV(_))
-        val list_seq_json = getListOfFiles(new_dir, List(".json")).map(parseLogJson(_))
+        val list_seq_csv = getFiles(new_dir, List(".csv")).map(parseLogCSV(_))
+        val list_seq_json = getFiles(new_dir, List(".json")).map(parseLogJson(_))
         list_seq_csv ++ list_seq_json
     }
 
     def serializeDrone(dir: String): List[Seq[Drone]] = {
         val new_dir = dir + "/drone"
-        val list_seq_csv = getListOfFiles(new_dir, List(".csv")).map(parseDroneCSV(_))
-        val list_seq_json = getListOfFiles(new_dir, List(".json")).map(parseDroneJson(_))
+        val list_seq_csv = getFiles(new_dir, List(".csv")).map(parseDroneCSV(_))
+        val list_seq_json = getFiles(new_dir, List(".json")).map(parseDroneJson(_))
         list_seq_csv ++ list_seq_json
     }
 
     def parse(dir: String, default: String = "../data/logs"): List[Seq[String]] = dir match {
-        case "" => getListOfFiles(default, List(".json")).map(parseJson(_))
-        case any => getListOfFiles(any, List(".json")).map(parseJson(_))
+        case "" => getFiles(default, List(".json")).map(parseJson(_))
+        case any => getFiles(any, List(".json")).map(parseJson(_))
     }
 
-    def getListOfFiles(path: String, extensions: List[String]): List[File] = {
-        val files = listFilesR(path)
-        files.filter{file => extensions.exists(file.getName.endsWith(_))}
+    def getFiles(path: String, extensions: List[String]): List[File] = {
+        listFiles(new File(path)).filter{file => extensions.exists(file.getName.endsWith(_))}
     }
 
-    def listAllFiles(path: String): List[File] = {
-        val directory = new File(path)
-        if (directory.exists && directory.isDirectory) {
-            directory.listFiles.toList
+    def listFiles(file: File): List[File] = {
+        if (file.exists) {
+            if (file.isDirectory) {
+                return listFilesR(file.listFiles.toList)
+            }
+            return List[File](file)
+        }
+        return Nil
+    }
+
+    def listFilesR(files: List[File]): List[File] = files match {
+        case Nil => Nil
+        case f :: tail => if (f.isDirectory) {
+            listFilesR(f.listFiles.toList) ::: listFilesR(tail)
         }
         else {
-            List[File]()
+            f :: listFilesR(tail)
         }
-    }
-
-    def listDirectories(path: String): List[File] = {
-        listAllFiles(path).filter(_.isDirectory)
-    }
-
-    def listFiles(path: String): List[File] = {
-        listAllFiles(path).filter{
-          f => f.isFile && (f.getName.endsWith(".csv")
-            || f.getName.endsWith(".json")) }
-    }
-
-    def listFilesR_aux(directories: List[File], files: List[File]) : List[File] = {
-        directories match {
-            case Nil => files
-            case d::tail => listFilesR_aux(tail, files:::listFiles(d.getPath()))
-        }
-    }
-
-    def listFilesR(path: String) : List[File] = {
-        listFilesR_aux(listDirectories(path), listFiles(path))
     }
 }
