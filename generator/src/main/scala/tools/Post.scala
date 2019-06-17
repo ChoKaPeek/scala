@@ -13,7 +13,7 @@ import org.apache.http.entity.StringEntity
 object Post {
 
     def sendToBase(json_string: String) = {
-        val url = "http://localhost:9000/msg";
+        val url = "http://handler:9000/msg";
         val post = new HttpPost(url)
         val client = new DefaultHttpClient
         println(json_string)

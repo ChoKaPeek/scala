@@ -9,7 +9,7 @@ import org.apache.log4j.Level
 
 object Spark {
     val conf = new SparkConf(true)
-        .set("spark.cassandra.connection.host", "localhost")
+        .set("spark.cassandra.connection.host", "cassandra")
         .set("spark.cassandra.auth.username", "cassandra")            
         .set("spark.cassandra.auth.password", "cassandra")
         .setAppName("Company")
