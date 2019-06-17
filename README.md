@@ -50,3 +50,22 @@ run `make run` to run our generator
 you will need to enter the name of a directory containing well-formated json
 logs from our drones, that will be sent to cassandra and queried by the server
 when needed to display the page `/list`
+
+## Docker
+Create containers, run cassandra
+`make dk-init`
+
+Wait for cassandra to be ready and
+`make dk-db`
+
+To run generator:
+`make dk-run`
+
+To run handler:
+`make dk-server`
+
+To update files in container:
+`make dk-cp`
+
+To stop servers:
+`make dk-stop`
