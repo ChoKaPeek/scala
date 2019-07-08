@@ -21,3 +21,5 @@ project/plugins/project/
 handler/public
 .envrc
 .direnv
+checkpoint/
+kafka/logs/
