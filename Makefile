@@ -1,5 +1,12 @@
 DB_CREATE = generate.cql
 
+kafka:
+	cd kafka; \
+	bin/zookeeper-server-start.sh config/zookeeper.properties & \
+	bin/kafka-server-start.sh config/server.properties & \
+	bin/kafka-topics.sh --delete --bootstrap-server localhost:9092 --topic logs & \
+	bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic logs
+
 run:
 	cd generator && sbt run ~
 
@@ -39,3 +46,5 @@ dk-stop docker-stop:
 	- for id in $$(docker ps -a -q); do docker stop $$id; done
 	- for id in $$(docker ps -a -q); do docker rm $$id; done
 	- docker network rm docknet
+
+.PHONY: kafka
