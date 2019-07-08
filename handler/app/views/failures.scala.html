@@ -1,0 +1,135 @@
+@(title: String, user: Map[String, String], logs: List[List[tools.Models.Log]], counts: List[Int])
+@layout(title) {
+        @if(user.get("username").isDefined) {
+            <h1>Hello, @user.getOrElse("username", "guest")!</h1>
+        } else {
+            <h1>@title</h1>
+        }
+        <h2>by altitude: @counts(0)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Drone ID</th>
+                    <th>Speed</th>
+                    <th>Altitude</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>DateTime</th>
+                    <th>Temperature</th>
+                    <th>Battery</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(log <- logs(0)){
+                <tr>
+                    <td>@log.id</td>
+                    <td>@log.id_drone</td>
+                    <td>@log.speed</td>
+                    <td>@log.altitude</td>
+                    <td>@log.latitude</td>
+                    <td>@log.longitude</td>
+                    <td>@log.datetime</td>
+                    <td>@log.temperature</td>
+                    <td>@log.battery</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2>by temperature: @counts(1)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Drone ID</th>
+                    <th>Speed</th>
+                    <th>Altitude</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>DateTime</th>
+                    <th>Temperature</th>
+                    <th>Battery</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(log <- logs(1)){
+                <tr>
+                    <td>@log.id</td>
+                    <td>@log.id_drone</td>
+                    <td>@log.speed</td>
+                    <td>@log.altitude</td>
+                    <td>@log.latitude</td>
+                    <td>@log.longitude</td>
+                    <td>@log.datetime</td>
+                    <td>@log.temperature</td>
+                    <td>@log.battery</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2>by battery: @counts(2)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Drone ID</th>
+                    <th>Speed</th>
+                    <th>Altitude</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>DateTime</th>
+                    <th>Temperature</th>
+                    <th>Battery</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(log <- logs(2)){
+                <tr>
+                    <td>@log.id</td>
+                    <td>@log.id_drone</td>
+                    <td>@log.speed</td>
+                    <td>@log.altitude</td>
+                    <td>@log.latitude</td>
+                    <td>@log.longitude</td>
+                    <td>@log.datetime</td>
+                    <td>@log.temperature</td>
+                    <td>@log.battery</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2>/!\ other: @counts(3)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Drone ID</th>
+                    <th>Speed</th>
+                    <th>Altitude</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>DateTime</th>
+                    <th>Temperature</th>
+                    <th>Battery</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(log <- logs(3)){
+                <tr>
+                    <td>@log.id</td>
+                    <td>@log.id_drone</td>
+                    <td>@log.speed</td>
+                    <td>@log.altitude</td>
+                    <td>@log.latitude</td>
+                    <td>@log.longitude</td>
+                    <td>@log.datetime</td>
+                    <td>@log.temperature</td>
+                    <td>@log.battery</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+}

@@ -6,7 +6,11 @@ GET / controllers.IndexController.index()
 
 GET /list controllers.IndexController.list()
 
-GET /drones controllers.IndexController.drones()
+GET /failures controllers.FailuresController.list()
+
+GET /drones controllers.DronesController.list()
+
+GET /drones/:id controllers.DronesController.show(id: Long)
 
 GET /update controllers.IndexController.update()
 

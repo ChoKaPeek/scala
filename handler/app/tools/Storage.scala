@@ -29,8 +29,12 @@ object Storage {
     }
 
     def readDrone(): Array[Drone] = {
+        readDroneDF.as[Drone](droneEncoder).collect
+    }
+    
+    def readDroneDF(): DataFrame = {
         spark.read.cassandraFormat("drone", "test")
-            .load().as[Drone](droneEncoder).collect
+            .load()
     }
 
     def readLog(): Array[Log] = {

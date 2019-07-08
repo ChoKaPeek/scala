@@ -5,12 +5,20 @@
         } else {
             <h1>Hello, Guest</h1>
         }
-        #{table drones, as: 'drones'}
-            #{column 'ID'}
-                ${drone.id}
-            #{/column}
-            #{column 'Brand'}
-                ${drone.brand.capitalizeWords()}
-            #{/column}
-        #{/table}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Brand</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(drone <- drones){
+                <tr>
+                    <td><a href="/drones/@drone.id">@drone.id</a></td>
+                    <td>@drone.brand</td>
+                </tr>
+                }
+            </tbody>
+        </table>
 }
