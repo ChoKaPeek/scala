@@ -10,7 +10,12 @@ import org.apache.http.impl.client.DefaultHttpClient
 import org.apache.http.client.entity.UrlEncodedFormEntity
 import org.apache.http.entity.StringEntity
 
+// http method
 object Post {
+
+    def sendIterToBase(iter: Iterator[String]) = iter.foreach {
+        x: String => println(x); Post.sendToBase(x)
+    }
 
     def sendToBase(json_string: String) = {
         val url = "http://handler:9000/msg";
@@ -20,8 +25,5 @@ object Post {
         post.setHeader("content-type", "application/json")
         post.setEntity(new StringEntity(json_string))
         val response = client.execute(post)
-        //println("--- HEADERS ---")
-        //response.getAllHeaders.foreach(arg => println(arg))
-        // need to handle an error
     }
 }
