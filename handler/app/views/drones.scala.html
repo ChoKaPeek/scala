@@ -1,0 +1,16 @@
+@(title: String, user: Map[String, String], drones: List[tools.Models.Drone])
+@layout(title) {
+        @if(user.get("username").isDefined) {
+            <h1>Hello, @user.getOrElse("username", "guest")!</h1>
+        } else {
+            <h1>Hello, Guest</h1>
+        }
+        #{table drones, as: 'drones'}
+            #{column 'ID'}
+                ${drone.id}
+            #{/column}
+            #{column 'Brand'}
+                ${drone.brand.capitalizeWords()}
+            #{/column}
+        #{/table}
+}
