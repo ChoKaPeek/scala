@@ -13,7 +13,7 @@ import spark.implicits._
 object Consumer {
     def consumeOnce(topic: String) = {
         val dfs = spark
-            .read // use `read` for batch, like DataFrame
+            .read
             .format("kafka")
             .option("kafka.bootstrap.servers", "localhost:9092")
             .option("subscribe", topic)
@@ -26,7 +26,7 @@ object Consumer {
 
     def consumeFromKafka(topic: String) = {
         val dfs = spark
-            .readStream // use `read` for batch, like DataFrame
+            .readStream
             .format("kafka")
             .option("kafka.bootstrap.servers", "localhost:9092")
             .option("subscribe", topic)
