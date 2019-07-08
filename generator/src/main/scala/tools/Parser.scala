@@ -7,67 +7,54 @@ import Models._
 import collection.JavaConversions._
 import Spark._
 import org.apache.spark.sql.types._
-import spark.implicits._ // implicit encoder for case classes
+import org.apache.spark.sql.DataFrame
+import spark.implicits._ // implicit encoder for case classes, uses spark object
 
 object Parser {
-
-    def parseDroneJson(file: File): Seq[Drone] = {
-        val df = spark.read.json(file.getPath()) // may need to close fd
-            .select($"id".cast(IntegerType), $"brand")
-        collection.Seq() ++ df.as[Drone].collect
+    def parseJson(file: File): DataFrame = {
+        spark.read.json(file.getPath()).toDF()
     }
 
-    def parseJson(file: File): Seq[Any] = {
-        val df = spark.read.json(file.getPath()) // may need to close fd
-
-        df.as[Log]
-         match .select($"id".cast(IntegerType), $"id_drone".cast(IntegerType),
-                    $"speed".cast(FloatType), $"altitude".cast(FloatType), $"latitude".cast(DoubleType),
-                    $"longitude".cast(DoubleType), $"datetime", $"temperature".cast(FloatType),
-                    $"battery".cast(FloatType))
-        collection.Seq() ++ df.as[Log].collect
+    def parseCSV(file: File): DataFrame = {
+        spark.read
+            .format("csv")
+            .option("sep", ",")
+            .option("inferSchema", "true")
+            .option("header", "true")
+            .option("ignoreLeadingWhiteSpace", "true")
+            .option("quote", "\"")
+            .option("escape", "\"")
+            .load(file.getPath())
     }
 
-    def parseCSV(file: File): Seq[Any] = {
-        val bufferedSource = Source.fromFile(file)
-        val fileContents = bufferedSource.getLines().drop(1).map {
-            line => line.split(",").toVector.map(_.trim) match {
-                case Vector(id, id_drone, speed, altitude, latitude, longitude, datetime, temperature, battery) => Log(id.toInt, id_drone.toInt, speed.toFloat, altitude.toFloat, latitude.toDouble, longitude.toDouble, datetime, temperature.toFloat, battery.toFloat)
-                case Vector(id, brand) => Drone(id.toInt, brand)
-                // TODO Handle others cases
-            }
-        }
-
-        // conversion to seq
-        collection.Seq() ++ fileContents
+    def streamJson(file: File): DataFrame = {
+        spark.readStream
+            .format("json")
+            .schema(logSchema)
+            .load(file.getParent())
     }
 
-    def parseJson(file: File): List[String] = {
-        Source.fromFile(file).getLines().toList
+    def streamCSV(file: File): DataFrame = {
+        spark.readStream
+            .format("csv")
+            .option("sep", ",")
+            .option("header", "true")
+            .option("ignoreLeadingWhiteSpace", "true")
+            .option("quote", "\"")
+            .option("escape", "\"")
+            .schema(logSchema)
+            .load(file.getParent())
     }
 
-    def serializePopulation(dir: String): List[Seq[Any]] = {
+    def serializePopulation(dir: String): List[DataFrame] = {
         val list_seq_csv = getFiles(dir, List(".csv")).map(parseCSV(_))
-        val list_seq_json = getFiles(dir, List(".json")).map(parseJson(_))
-        list_seq_csv ++ list_seq_json
-    }
-    def serializeLog(dir: String): List[Seq[Log]] = {
-        val new_dir = dir + "/log"
-        val list_seq_csv = getFiles(new_dir, List(".csv")).map(parseLogCSV(_))
-        val list_seq_json = getFiles(new_dir, List(".json")).map(parseLogJson(_))
-        list_seq_csv ++ list_seq_json
+        list_seq_csv ++ getFiles(dir, List(".json")).map(parseJson(_))
     }
 
-    def serializeDrone(dir: String): List[Seq[Drone]] = {
-        val new_dir = dir + "/drone"
-        val list_seq_csv = getFiles(new_dir, List(".csv")).map(parseDroneCSV(_))
-        val list_seq_json = getFiles(new_dir, List(".json")).map(parseDroneJson(_))
-        list_seq_csv ++ list_seq_json
-    }
-
-    def parse(dir: String, default: String = "../data/logs"): List[Seq[String]] = dir match {
-        case "" => getFiles(default, List(".json")).map(parseJson(_))
-        case any => getFiles(any, List(".json")).map(parseJson(_))
+    def parse(dir: String, default: String): List[DataFrame] = {
+        val str = if (dir == "") default else dir
+        val list_seq_csv = getFiles(str, List(".json")).map(streamJson(_))
+        list_seq_csv ++ getFiles(str, List(".csv")).map(streamCSV(_))
     }
 
     def getFiles(path: String, extensions: List[String]): List[File] = {
@@ -88,8 +75,7 @@ object Parser {
         case Nil => Nil
         case f :: tail => if (f.isDirectory) {
             listFilesR(f.listFiles.toList) ::: listFilesR(tail)
-        }
-        else {
+        } else {
             f :: listFilesR(tail)
         }
     }

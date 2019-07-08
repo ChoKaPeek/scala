@@ -9,9 +9,10 @@ import org.apache.log4j.Level
 
 object Spark {
     val conf = new SparkConf(true)
-        .set("spark.cassandra.connection.host", "cassandra")
+        .set("spark.cassandra.connection.host", sys.env.getOrElse("CASS_HOST", "localhost"))
         .set("spark.cassandra.auth.username", "cassandra")
         .set("spark.cassandra.auth.password", "cassandra")
+        .set("spark.sql.streaming.checkpointLocation", "data/checkpoint")
         .setAppName("Company")
         .setMaster("local[*]") // Run Spark locally with as many worker threads as possessed logical cores
 

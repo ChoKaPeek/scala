@@ -7,22 +7,38 @@ import Models._
 import Spark._
 
 object Storage {
-    def writeDrone(sequence: Seq[Drone]): Unit = {
-        val rdd = sc.parallelize(sequence)
-        rdd.saveToCassandra("test", "drone",
-            SomeColumns("id", "brand"))
+    def isLog(x: Row): Boolean = x.toSeq match {
+        case Seq(id, brand) => false
+        case _ => true
     }
-    def writeLog(sequence: Seq[Log]): Unit = {
-        val rdd = sc.parallelize(sequence)
-        rdd.saveToCassandra("test", "log",
-            SomeColumns("id", "id_drone", "speed", "altitude", "latitude", "longitude", "datetime", "temperature", "battery"))
+
+    def write(df: DataFrame): Unit = {
+        val table = if (df.limit(1).filter{isLog(_)}.count() == 0) "drone" else "log"
+        
+        df.write.cassandraFormat(table, "test")
+            .mode(SaveMode.Append).save()
     }
-    
+
+    def writeStream(df: DataFrame): Unit = {
+        df.writeStream.foreachBatch {
+            (batchDF, _) => batchDF.write
+                .cassandraFormat("log", "test")
+                .mode(SaveMode.Append)
+                .save()
+        }.start()
+    }
+
     def readDrone(): Array[Drone] = {
-        sc.cassandraTable[Drone]("test", "drone").collect
+        spark.read.cassandraFormat("drone", "test")
+            .load().as[Drone](droneEncoder).collect
     }
 
     def readLog(): Array[Log] = {
-        sc.cassandraTable[Log]("test", "log").collect
+        readLogDF.as[Log](logEncoder).collect
+    }
+
+    def readLogDF(): DataFrame = {
+        spark.read.cassandraFormat("log", "test")
+            .load()
     }
 }

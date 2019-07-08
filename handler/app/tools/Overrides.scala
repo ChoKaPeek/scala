@@ -11,7 +11,7 @@ object Overrides {
             (json \ "id").as[Int],
             (json \ "id_drone").as[Int],
             (json \ "speed").as[Float],
-            (json \ "altitude").as[Float],
+            (json \ "altitude").as[Double],
             (json \ "latitude").as[Double],
             (json \ "longitude").as[Double],
             (json \ "datetime").as[String],
